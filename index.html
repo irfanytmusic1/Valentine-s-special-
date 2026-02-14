@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Music Test</title>
+</head>
+<body style="text-align:center;margin-top:40vh;font-family:sans-serif;">
+
+<button id="play">Tap to Play Music 💗</button>
+
+<audio id="music" src="lover-instrumental.mp3" loop></audio>
+
+<script>
+document.getElementById("play").onclick = function () {
+  document.getElementById("music").play();
+  this.innerText = "Music is playing 🎶";
+};
+</script>
+
+</body>
+</html>
