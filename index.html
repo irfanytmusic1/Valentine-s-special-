@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Shravya 💗</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+  height:100vh;
+  overflow:hidden;
+  font-family:'Segoe UI',sans-serif;
+  color:white;
+  background:linear-gradient(to bottom,#0a0f2c,#05060f);
+}
+
+/* subtle stars */
+body::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  background-image:
+    radial-gradient(2px 2px at 20% 30%, white, transparent),
+    radial-gradient(1px 1px at 70% 60%, white, transparent),
+    radial-gradient(1.5px 1.5px at 40% 80%, white, transparent),
+    radial-gradient(1px 1px at 85% 20%, white, transparent);
+  opacity:.3;
+  pointer-events:none;
+}
+
+/* tap screen */
+#startScreen{
+  position:fixed;
+  inset:0;
+  background:linear-gradient(135deg,#ff4d6d,#ff8fa3);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  z-index:10;
+  font-size:1.4rem;
+}
+
+/* slides */
+.screen{
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:24px;
+  opacity:0;
+  transition:opacity 1s ease;
+}
+.screen.active{opacity:1;}
+
+.text{
+  font-size:1.2rem;
+  line-height:1.6;
+}
+
+#proposal h1{font-size:1.6rem;margin-bottom:24px;}
+
+button{
+  padding:14px 22px;
+  border:none;
+  border-radius:999px;
+  font-size:1rem;
+  cursor:pointer;
+}
+
+#yes{
+  background:#ff4d6d;
+  color:white;
+  box-shadow:0 0 20px rgba(255,77,109,.7);
+}
+
+#no{
+  background:#fff;
+  color:#000;
+  position:absolute;
+}
+
+.modal{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.7);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:20;
+}
+
+.box{
+  background:#111;
+  padding:20px;
+  border-radius:16px;
+  width:85%;
+}
+
+input{
+  width:100%;
+  padding:10px;
+  margin-top:12px;
+}
+
+#end{
+  flex-direction:column;
+}
+
+#end img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  position:absolute;
+  inset:0;
+  z-index:-1;
+}
+
+#end p{
+  font-size:1.3rem;
+  padding:24px;
+  background:rgba(0,0,0,.4);
+  border-radius:16px;
+}
+</style>
+</head>
+
+<body>
+
+<div id="startScreen">Tap to Begin 💗</div>
+
+<audio id="music" src="lover-instrumental.mp3" loop></audio>
+
+<!-- SLIDES -->
+<div id="s1" class="screen"><div class="text">
+For the one who stole my heart.<br>
+Not in a dramatic way.<br>
+Not all at once.<br>
+Just slowly…<br>
+until I realised it was gone —<br>
+and I really loved that.
+</div></div>
+
+<div id="s2" class="screen"><div class="text">
+Every day I wake up,<br>
+and you’re the first thought that feels familiar.<br>
+Not exciting like a spark —<br>
+because sparks fade within a blink,<br>
+but comforting…<br>
+like something that belongs to me.
+</div></div>
+
+<div id="s3" class="screen"><div class="text">
+I don’t think about fate or miracles.<br>
+Somewhere between normal days,<br>
+random conversations,<br>
+and quiet moments,<br>
+you became my favourite part of life.
+</div></div>
+
+<div id="s4" class="screen"><div class="text">
+Loving you didn’t start with a moment.<br>
+It started with time.<br><br>
+With getting used to you.<br>
+With choosing you.<br>
+With realising life felt better<br>
+when you were part of it.
+</div></div>
+
+<div id="s5" class="screen"><div class="text">
+I love you, Shravya.<br>
+I love you so much,<br>
+my lil bubu cutoo Bujji.<br><br>
+Not for a phase.<br>
+Not for convenience.<br>
+But forever.
+</div></div>
+
+<div id="s6" class="screen"><div class="text">
+The last six months with you<br>
+didn’t just pass — they aged.<br><br>
+Like wine.<br>
+Deeper. Better.<br><br>
+I don’t just want moments with you.<br>
+I want every moment with you.<br>
+I want to grow old with you.
+</div></div>
+
+<div id="s7" class="screen"><div class="text">
+I look at your face every day.<br>
+When I wake up.<br><br>
+Your brown eyes…<br>
+I could stare into them forever.<br><br>
+Your lips, your nose, your cheeks, your chin —<br>
+perfect in ways words can’t explain.<br><br>
+And your curly hair… 😍<br>
+my real-life Rapunzel,<br>
+rare in the best way.<br><br>
+And your skin… magnificent —<br>
+even that word falls short when it’s you.
+</div></div>
+
+<div id="s8" class="screen"><div class="text">
+I swear… one day I will eat you,<br>
+cutoo feebu. 😋
+</div></div>
+
+<!-- PROPOSAL -->
+<div id="proposal" class="screen">
+  <div>
+    <h1>Shravya, will you be my Valentine?</h1>
+    <button id="yes">YES 💗</button>
+    <button id="no">nof</button>
+  </div>
+</div>
+
+<!-- MATH MODAL -->
+<div class="modal" id="math">
+  <div class="box">
+    <p id="q"></p>
+    <input id="ans" placeholder="Type your answer">
+    <button id="submit" disabled>Submit</button>
+  </div>
+</div>
+
+<!-- END -->
+<div id="end" class="screen">
+  <img src="aurora.jpg">
+  <p>
+    One day, I promise,<br>
+    we’ll watch the aurora lights together —<br>
+    under a sky like this,<br>
+    laying beside each other,<br>
+    making memories that last longer<br>
+    than words ever could.
+  </p>
+</div>
+
+<script>
+const screens=[...document.querySelectorAll('.screen')];
+const music=document.getElementById('music');
+const start=document.getElementById('startScreen');
+const proposal=document.getElementById('proposal');
+const noBtn=document.getElementById('no');
+const yesBtn=document.getElementById('yes');
+const modal=document.getElementById('math');
+const question=document.getElementById('q');
+const ans=document.getElementById('ans');
+const submit=document.getElementById('submit');
+
+let index=0;
+let slideInterval;
+let noClicks=0;
+let mathStage=0;
+let paused=false;
+
+/* START */
+start.addEventListener('click',()=>{
+  start.style.display='none';
+  screens[0].classList.add('active');
+  music.play();
+  slideInterval=setInterval(nextSlide,6000);
+});
+
+/* SLIDES */
+function nextSlide(){
+  if(paused) return;
+  if(index < screens.length-2){
+    screens[index].classList.remove('active');
+    index++;
+    screens[index].classList.add('active');
+  } else {
+    clearInterval(slideInterval);
+    screens[index].classList.remove('active');
+    proposal.classList.add('active');
+  }
+}
+
+/* Pause only during slides */
+document.addEventListener('touchstart',()=>{
+  if(index < screens.length-2){
+    paused=true;
+    music.pause();
+  }
+});
+document.addEventListener('touchend',()=>{
+  if(index < screens.length-2){
+    paused=false;
+    music.play();
+  }
+});
+
+/* NO button logic */
+noBtn.addEventListener('click',()=>{
+  noClicks++;
+  moveButton();
+
+  if(noClicks===1) noBtn.textContent="dhokha 😡";
+  else if(noClicks===2) noBtn.textContent="magar kyu 😭😭";
+  else if(noClicks===3) noBtn.textContent="abee click on yes 🤬🙏🤬";
+  else if(noClicks===4){
+    startMath();
+  }
+});
+
+function moveButton(){
+  const x=Math.random()*(window.innerWidth-120);
+  const y=Math.random()*(window.innerHeight-60);
+  noBtn.style.left=x+"px";
+  noBtn.style.top=y+"px";
+}
+
+/* Math */
+function startMath(){
+  modal.style.display='flex';
+  question.innerHTML="ok you won’t click on yes na 😡😡<br>then to say no, answer this:<br>2 + 2 = ?";
+}
+
+ans.addEventListener('input',()=>{
+  submit.disabled=ans.value.trim()==="";
+});
+
+submit.addEventListener('click',()=>{
+  if(mathStage===0){
+    if(ans.value.trim()==="4"){
+      mathStage=1;
+      question.innerHTML="hmm lucky guess 😒<br>fine... 12 × 8 = ?";
+      ans.value="";
+      submit.disabled=true;
+    } else {
+      question.innerHTML="wrong 😤 try again.<br>2 + 2 = ?";
+    }
+  } else if(mathStage===1){
+    if(ans.value.trim()==="96"){
+      mathStage=2;
+      question.innerHTML="last one 😈<br>prove Riemann Hypothesis.";
+      ans.value="";
+      submit.disabled=true;
+    } else {
+      question.innerHTML="nope 😌 12 × 8 = ?";
+    }
+  } else {
+    question.innerHTML="see? easier to click YES 💗";
+  }
+});
+
+/* YES */
+yesBtn.addEventListener('click',()=>{
+  proposal.classList.remove('active');
+  modal.style.display='none';
+  document.getElementById('end').classList.add('active');
+});
+</script>
+
+</body>
+</html>
