@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For You 💗</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+  height:100vh;
+  overflow:hidden;
+  font-family:system-ui,sans-serif;
+  background:radial-gradient(circle at top,#1b2a4e,#05060f);
+  color:white;
+}
+
+/* Pink start screen */
+#start{
+  position:fixed;
+  inset:0;
+  background:linear-gradient(135deg,#ff4d6d,#ff8fa3);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:1.5rem;
+  z-index:100;
+}
+
+/* Slides */
+.slide{
+  position:absolute;
+  inset:0;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:24px;
+  font-size:1.2rem;
+  line-height:1.6;
+}
+.slide.active{display:flex;}
+
+/* Proposal */
+#proposal button{
+  padding:12px 22px;
+  border:none;
+  border-radius:999px;
+  font-size:1rem;
+  margin:10px;
+  cursor:pointer;
+}
+#yes{background:#ff4d6d;color:white;}
+#no{
+  background:white;
+  color:black;
+  position:absolute;
+}
+
+/* Math Modal */
+#mathModal{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.8);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  gap:10px;
+}
+#mathModal input{
+  padding:8px;
+  font-size:1rem;
+}
+#mathModal button{
+  padding:8px 16px;
+  border:none;
+  border-radius:6px;
+  cursor:pointer;
+}
+
+/* Aurora ending */
+#ending{
+  display:none;
+  position:fixed;
+  inset:0;
+}
+#ending img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+#endingText{
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.4);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:20px;
+  font-size:1.1rem;
+  line-height:1.6;
+}
+</style>
+</head>
+
+<body>
+
+<div id="start">Tap to Begin 💗</div>
+<audio id="music" src="lover-instrumental.mp3" loop></audio>
+
+<!-- 5 Romantic Slides -->
+<div class="slide active">You didn’t just enter my life… you slowly became my favorite part of it.</div>
+<div class="slide">Not loudly. Not suddenly. Just gently… and I loved that.</div>
+<div class="slide">Every little moment with you feels warmer than it should.</div>
+<div class="slide">You don’t even try… yet you shine in ways no one else does.</div>
+<div class="slide" id="proposal">
+  <div>
+    Will you be my Valentine? 💗<br><br>
+    <button id="yes">YES 💗</button>
+    <button id="no">nof</button>
+  </div>
+</div>
+
+<!-- Math Modal -->
+<div id="mathModal">
+  <div id="mathQuestion"></div>
+  <input type="number" id="mathAnswer" placeholder="Enter answer">
+  <button id="submitMath">Submit</button>
+</div>
+
+<!-- Ending -->
+<div id="ending">
+  <img src="aurora.jpg">
+  <div id="endingText">
+    One day, I promise,<br>
+    we’ll watch the aurora lights together —<br>
+    under a sky like this,<br>
+    laying beside each other,<br>
+    making memories that last longer<br>
+    than words ever could.
+  </div>
+</div>
+
+<script>
+const slides=[...document.querySelectorAll(".slide")];
+const start=document.getElementById("start");
+const music=document.getElementById("music");
+const yes=document.getElementById("yes");
+const no=document.getElementById("no");
+const mathModal=document.getElementById("mathModal");
+const mathQuestion=document.getElementById("mathQuestion");
+const mathAnswer=document.getElementById("mathAnswer");
+const submitMath=document.getElementById("submitMath");
+const ending=document.getElementById("ending");
+
+let index=0;
+let paused=false;
+let interval;
+let noCount=0;
+
+/* Start */
+start.onclick=()=>{
+  start.style.display="none";
+  music.play();
+  interval=setInterval(nextSlide,4000);
+};
+
+/* Slide Logic */
+function nextSlide(){
+  if(paused) return;
+  slides[index].classList.remove("active");
+  index++;
+  if(index>=slides.length) return;
+  slides[index].classList.add("active");
+
+  if(slides[index].id==="proposal"){
+    clearInterval(interval);
+  }
+}
+
+/* Tap to pause during slides only */
+document.addEventListener("click",()=>{
+  if(index < slides.length-1){
+    paused=!paused;
+    paused?music.pause():music.play();
+  }
+});
+
+/* No button evolution */
+no.onclick=()=>{
+  noCount++;
+  const texts=["nof","dhokha 😡","magar kyu 😭😭","abee click yes 🤬🙏🤬"];
+  no.textContent=texts[Math.min(noCount,texts.length-1)];
+  no.style.left=Math.random()*(window.innerWidth-100)+"px";
+  no.style.top=Math.random()*(window.innerHeight-60)+"px";
+
+  if(noCount===4){
+    mathModal.style.display="flex";
+    mathQuestion.textContent="17 × 3 = ?";
+  }
+};
+
+/* Math */
+submitMath.onclick=()=>{
+  if(mathAnswer.value==="") return;
+  if(parseInt(mathAnswer.value)===51){
+    mathModal.style.display="none";
+  }else{
+    mathQuestion.textContent="Wrong 😏 Try again: 17 × 3 = ?";
+  }
+};
+
+/* YES */
+yes.onclick=()=>{
+  document.querySelector("#proposal").style.display="none";
+  ending.style.display="block";
+};
+</script>
+
+</body>
+</html>
