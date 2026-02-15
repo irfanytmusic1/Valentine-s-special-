@@ -114,7 +114,35 @@ input{
 
 <audio id="music" src="lover-instrumental.mp3" loop></audio>
 
-<div id="tapStart">Tap to play music 🎵</div>
+<!-- TAP TO BEGIN SCREEN -->
+<div id="tapStart">Tap me</div>
+
+<script>
+const tap = document.getElementById('tapStart');
+const music = document.getElementById('music');
+const screens = [...document.querySelectorAll('.screen')];
+let i = 0;
+let interval;
+
+tap.addEventListener('click', () => {
+    // hide tap screen
+    tap.style.display = 'none';
+
+    // play music
+    music.play().catch(()=>{});
+
+    // show first slide
+    screens[i].classList.add('active');
+
+    // start slideshow
+    interval = setInterval(() => {
+        if(i >= screens.length-2) return; // stop before proposal
+        screens[i].classList.remove('active');
+        i++;
+        screens[i].classList.add('active');
+    }, 6000);
+});
+</script>
 
 <div class="stars" id="starsContainer"></div>
 
