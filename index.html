@@ -6,33 +6,108 @@
 <title>For Shravya 💗</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
-body{overflow:hidden;font-family:'Segoe UI',sans-serif;height:100vh;color:white;background:#05060f;}
-.screen{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;text-align:center;padding:24px;opacity:0;transition:opacity 1s ease;}
+body{
+  font-family:'Segoe UI',sans-serif;
+  height:100vh;
+  overflow:hidden;
+  background:#ffb6c1;
+  color:white;
+  position:relative;
+}
+.screen{
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:24px;
+  opacity:0;
+  transition:opacity 1s ease;
+}
 .screen.active{opacity:1;}
-.text{font-size:1.2rem;line-height:1.6;}
-button{padding:14px 22px;border:none;border-radius:999px;font-size:1rem;cursor:pointer;}
-#yes{background:#ff4d6d;color:white;box-shadow:0 0 20px rgba(255,77,109,.7);}
-#no{background:#fff;color:#000;position:absolute;}
-.modal{position:fixed;inset:0;background:rgba(0,0,0,.7);display:none;align-items:center;justify-content:center;}
-.box{background:#111;padding:20px;border-radius:16px;width:85%;}
-input{width:100%;padding:10px;margin-top:12px;}
-#end img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;z-index:-1;}
-#end p{font-size:1.3rem;padding:24px;background:rgba(0,0,0,.4);border-radius:16px;}
-/* Stars background */
-#stars{position:absolute;inset:0;background:black;z-index:-2;}
-.star{position:absolute;background:white;border-radius:50%;opacity:0.8;animation:twinkle 2s infinite alternate;}
-@keyframes twinkle{0%{opacity:0.3;}50%{opacity:1;}100%{opacity:0.3;}}
+.text{
+  font-size:1.2rem;
+  line-height:1.6;
+}
+button{
+  padding:14px 22px;
+  border:none;
+  border-radius:999px;
+  font-size:1rem;
+  cursor:pointer;
+}
+#yes{
+  background:#ff4d6d;
+  color:white;
+  box-shadow:0 0 20px rgba(255,77,109,.7);
+}
+#no{
+  background:#fff;
+  color:#000;
+  position:absolute;
+}
+.modal{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.7);
+  display:none;
+  align-items:center;
+  justify-content:center;
+}
+.box{
+  background:#111;
+  padding:20px;
+  border-radius:16px;
+  width:85%;
+}
+input{
+  width:100%;
+  padding:10px;
+  margin-top:12px;
+}
+#end{
+  flex-direction:column;
+}
+#end img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  position:absolute;
+  inset:0;
+  z-index:-1;
+}
+#end p{
+  font-size:1.3rem;
+  padding:24px;
+  background:rgba(0,0,0,.4);
+  border-radius:16px;
+}
+
+/* Starry night */
+body::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:transparent;
+  pointer-events:none;
+  box-shadow:
+    50px 80px #fff, 120px 200px #fff, 300px 150px #fff,
+    500px 400px #fff, 700px 100px #fff, 900px 250px #fff,
+    1000px 300px #fff, 1100px 500px #fff;
+  animation: twinkle 3s infinite alternate;
+}
+@keyframes twinkle{
+  0%{opacity:.3;}
+  100%{opacity:1;}
+}
 </style>
 </head>
+
 <body>
 
-<!-- Background Stars -->
-<div id="stars"></div>
-
-<!-- Music -->
 <audio id="music" src="lover-instrumental.mp3" loop></audio>
 
-<!-- Slides -->
 <div id="s1" class="screen active"><div class="text">
 Not in a dramatic way.<br>
 Not all at once.<br>
@@ -46,7 +121,7 @@ Every day I wake up,<br>
 and you’re the first thought that feels familiar.<br>
 Not exciting like a spark —<br>
 because sparks fade within a blink,<br>
-but comforting.
+but comforting…
 </div></div>
 
 <div id="s3" class="screen"><div class="text">
@@ -62,37 +137,29 @@ Loving you didn’t start with a moment.<br>
 It started with time.<br>
 With getting used to you.<br>
 With choosing you.<br>
-With realising life felt better<br>
-when you were part of it.
+With realising life felt better when you were part of it.
 </div></div>
 
 <div id="s5" class="screen"><div class="text">
 I love you, Shravya.<br>
-I love you so much,<br>
-my lil bubu cutoo Bujji.<br><br>
+I love you so much, my lil bubu cutoo Bujji.<br>
 Not for a phase.<br>
 Not for convenience.<br>
 But forever.<br><br>
-The last six months with you<br>
-didn’t just pass — they aged.<br>
-They aged like wine.<br>
+The last six months with you didn’t just pass — they aged like wine.<br>
 Deeper. Better.<br>
-I don’t just want moments with you.<br>
 I want every moment with you.<br>
 I want to grow old with you.<br><br>
 I look at your face every day.<br>
-Your brown eyes… I want to keep staring into them forever.<br>
-Your lips are built perfect — I could worship them, cute, pink, soft, and mine 💗<br>
-Your nose — whoever made fun of it is jealous of its perfectness 😋<br>
-Your little cheeksy — I love and admire it, my cutoo patootoo<br>
-Your chin — underrated, but not for me, habiba<br>
-Your curly hair… 😍 my real-life Rapunzel, rare in the best way<br>
-And your skin… magnificent — like that word was made to describe you.<br>
-You’re not unreal.<br>
-You’re just… you. And that’s what makes "you" perfect.
+Your brown eyes… I could stare into them forever.<br>
+Your lips are built perfect — cute, soft, pink, and mine 💗.<br>
+Your nose — perfectly shaped, some people are jealous of it 😋.<br>
+Your little cheeks — adorable, I admire them so much.<br>
+Your chin — underrated but perfect to me.<br>
+Your curly hair 😍 — my real-life Rapunzel.<br>
+And your skin… magnificent — even that word falls short for you.
 </div></div>
 
-<!-- Proposal Slide -->
 <div id="proposal" class="screen">
   <div>
     <h1>Shravya, will you be my Valentine?</h1>
@@ -101,17 +168,17 @@ You’re just… you. And that’s what makes "you" perfect.
   </div>
 </div>
 
-<!-- Math Modal -->
 <div class="modal" id="math">
   <div class="box">
     <p id="q">2 + 2 = ?</p>
     <input id="ans">
     <button onclick="check()">Submit</button>
-    <p style="margin-top:8px;font-size:.9rem;">Or stay here forever, cutoo feebsa.</p>
+    <p style="margin-top:8px;font-size:.9rem;">
+      Or stay here forever, cutoo feebsa.
+    </p>
   </div>
 </div>
 
-<!-- Aurora Ending -->
 <div id="end" class="screen">
   <img src="aurora.jpg">
   <p>
@@ -125,23 +192,9 @@ You’re just… you. And that’s what makes "you" perfect.
 </div>
 
 <script>
-// Generate glowing stars
-for(let i=0;i<150;i++){
-  let star=document.createElement('div');
-  star.className='star';
-  star.style.width=star.style.height=Math.random()*2+1+'px';
-  star.style.top=Math.random()*100+'%';
-  star.style.left=Math.random()*100+'%';
-  star.style.animationDuration=(Math.random()*3+1)+'s';
-  document.getElementById('stars').appendChild(star);
-}
-
-// Slides
 const screens=[...document.querySelectorAll('.screen')];
-let i=0;
-let paused=false;
+let i=0,paused=false;
 const music=document.getElementById('music');
-let tapStarted=false;
 
 function next(){
   if(paused||i>=screens.length-1)return;
@@ -149,43 +202,46 @@ function next(){
   i++;
   screens[i].classList.add('active');
 }
+setInterval(next,6000);
 
-// Tap to start music & slideshow
 document.body.addEventListener('click',()=>{
-  if(!tapStarted){music.play(); tapStarted=true;}
-  next();
-},{once:true});
+  if(!music.paused) return;
+  music.play();
+}, {once:true});
 
-// Buttons
+document.body.addEventListener('touchstart',()=>{
+  paused=!paused;
+  if(paused) music.pause();
+  else music.play();
+});
+
 const no=document.getElementById('no');
-let noClickCount=0;
-
+let noCount=0;
 no.onclick=()=>{
-  noClickCount++;
-  const texts=["dhokha 😡","magar kyu 😭😭","abee click on yes 🤬🙏🤬"];
-  if(noClickCount<=3){
-    no.textContent=texts[noClickCount-1];
-    const x=Math.random()*(window.innerWidth-100);
+  const messages=["nof","dhokha 😡","magar kyu 😭😭","abee click on yes 🤬🙏🤬"];
+  if(noCount<messages.length){
+    const x=Math.random()*(window.innerWidth-150);
     const y=Math.random()*(window.innerHeight-50);
     no.style.left=x+'px';
     no.style.top=y+'px';
+    no.textContent=messages[noCount];
+    noCount++;
   } else {
     document.getElementById('math').style.display='flex';
   }
 };
 
-// Math check
 function check(){
-  const ans=document.getElementById('ans').value.trim();
-  if(ans===""){return;}
-  document.getElementById('q').textContent="∫ e^x dx ?";
-  document.getElementById('ans').value="";
+  const ans=document.getElementById('ans').value;
+  if(ans.trim()===""){ alert("Enter something 😡"); return; }
+  document.getElementById('q').textContent='∫ e^x dx ?';
+  document.getElementById('ans').value='';
 }
 
-// Yes button
 document.getElementById('yes').onclick=()=>{
   screens[i].classList.remove('active');
   document.getElementById('end').classList.add('active');
+  music.play();
 };
 </script>
 </body>
