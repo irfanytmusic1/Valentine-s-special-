@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Shravya 💗</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+  font-family:'Segoe UI', sans-serif;
+  overflow:hidden;
+  height:100vh;
+  background:#ffc0cb;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+#tapStart{
+  padding:20px 40px;
+  background:#ff4d6d;
+  color:white;
+  border:none;
+  border-radius:999px;
+  font-size:1.5rem;
+  cursor:pointer;
+  box-shadow:0 0 20px rgba(255,77,109,.7);
+}
+.screen{
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:24px;
+  opacity:0;
+  transition:opacity 1s ease;
+  flex-direction:column;
+  color:white;
+}
+.screen.active{opacity:1;z-index:2;}
+.text{font-size:1.3rem;line-height:1.6;max-width:90%;}
+
+/* Night sky stars */
+.star{
+  position:absolute;
+  width:2px;
+  height:2px;
+  background:white;
+  border-radius:50%;
+  opacity:0.8;
+  animation:twinkle 2s infinite alternate;
+}
+@keyframes twinkle{
+  from{opacity:0.2;}
+  to{opacity:1;}
+}
+
+/* Proposal Buttons */
+#proposal h1{font-size:1.6rem;margin-bottom:24px;}
+button{
+  padding:14px 22px;
+  border:none;
+  border-radius:999px;
+  font-size:1rem;
+  cursor:pointer;
+}
+#yes{
+  background:#ff4d6d;
+  color:white;
+  box-shadow:0 0 20px rgba(255,77,109,.7);
+}
+#no{
+  background:#fff;
+  color:#000;
+  position:absolute;
+}
+
+/* Math Modal */
+.modal{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.7);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:10;
+}
+.box{
+  background:#111;
+  padding:20px;
+  border-radius:16px;
+  width:85%;
+}
+input{
+  width:100%;
+  padding:10px;
+  margin-top:12px;
+}
+#end{
+  flex-direction:column;
+}
+#end img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  position:absolute;
+  inset:0;
+  z-index:-1;
+}
+#end p{
+  font-size:1.3rem;
+  padding:24px;
+  background:rgba(0,0,0,.4);
+  border-radius:16px;
+}
+</style>
+</head>
+
+<body>
+
+<audio id="music" src="lover-instrumental.mp3" loop></audio>
+
+<!-- Tap to play -->
+<button id="tapStart">Tap to play music 💗</button>
+
+<!-- Poetry & praise slides -->
+<div id="s1" class="screen"><div class="text">
+For the one who stole my heart.<br>
+Not in a dramatic way.<br>
+Not all at once.<br>
+Just slowly…<br>
+until I realised it was gone —<br>
+and I really loved that.
+</div></div>
+
+<div id="s2" class="screen"><div class="text">
+Every day I wake up,<br>
+and you’re the first thought that feels familiar.<br>
+Not exciting like a spark —<br>
+because sparks fade within a blink,<br>
+but comforting…
+</div></div>
+
+<div id="s3" class="screen"><div class="text">
+I don’t think about fate or miracles.<br>
+Somewhere between normal days,<br>
+random conversations,<br>
+and quiet moments,<br>
+you became my favourite part of life.
+</div></div>
+
+<div id="s4" class="screen"><div class="text">
+Loving you didn’t start with a moment.<br>
+It started with time.<br><br>
+With getting used to you.<br>
+With choosing you.<br>
+With realising life felt better<br>
+when you were part of it.
+</div></div>
+
+<div id="s5" class="screen"><div class="text">
+I love you, Shravya.<br>
+I love you so much,<br>
+my lil bubu cutoo Bujji.<br><br>
+Not for a phase.<br>
+Not for convenience.<br>
+But forever.
+</div></div>
+
+<div id="s6" class="screen"><div class="text">
+The last six months with you<br>
+didn’t just pass — they aged.<br>
+They aged like wine.<br>
+Deeper. Better.<br><br>
+I don’t just want moments with you.<br>
+I want every moment with you.<br>
+I want to grow old with you.
+</div></div>
+
+<div id="s7" class="screen"><div class="text">
+I look at your face every day.<br>
+Your brown eyes…<br>
+I could stare into them forever.<br><br>
+Your lips are built perfect like i never saw this much perfectness in someone’s lips — they are that perfect, cute little, pink, soft and mine 💗<br>
+Your nose — whoever made fun of it is jealous of its perfectness 😋<br>
+Your little cheeksy aww I love them, my cutoo patootoo<br>
+And that little chin is underrated but not for me habiba<br>
+You’re that perfect that I can't even find words to describe your beauty, my lil bubu.<br><br>
+And your curly hair… 😍 my real-life Rapunzel,<br>
+rare in the best way.<br>
+And your skin… magnificent — even that word falls short when it’s you.
+</div></div>
+
+<div id="s8" class="screen"><div class="text">
+I swear… one day I will eat you,<br>
+cutoo feebu. 😋
+</div></div>
+
+<!-- Proposal -->
+<div id="proposal" class="screen">
+  <div>
+    <h1>Shravya, will you be my Valentine?</h1>
+    <button id="yes">YES 💗</button>
+    <button id="no">nof</button>
+  </div>
+</div>
+
+<!-- Math prank modal -->
+<div class="modal" id="math">
+  <div class="box">
+    <p id="q">2 + 2 = ?</p>
+    <input id="ans">
+    <button onclick="check()">Submit</button>
+    <p style="margin-top:8px;font-size:.9rem;">Or stay here forever, cutoo feebsa.</p>
+  </div>
+</div>
+
+<!-- Aurora ending -->
+<div id="end" class="screen">
+  <img src="aurora.jpg">
+  <p>
+    One day, I promise,<br>
+    we’ll watch the aurora lights together —<br>
+    under a sky like this,<br>
+    laying beside each other,<br>
+    making memories that last longer<br>
+    than words ever could.
+  </p>
+</div>
+
+<script>
+// Stars
+for(let i=0;i<150;i++){
+  const star=document.createElement('div');
+  star.className='star';
+  star.style.top=Math.random()*100+'%';
+  star.style.left=Math.random()*100+'%';
+  star.style.width=(Math.random()*2+1)+'px';
+  star.style.height=star.style.width;
+  star.style.animationDuration=(Math.random()*2+1)+'s';
+  document.body.appendChild(star);
+}
+
+const screens=[...document.querySelectorAll('.screen')];
+let i=0;
+
+const music=document.getElementById('music');
+const tap=document.getElementById('tapStart');
+
+tap.addEventListener('click',()=>{
+  tap.style.display='none';
+  music.play();
+  screens[i].classList.add('active');
+  nextInterval();
+});
+
+let interval;
+function nextInterval(){
+  interval=setInterval(()=>{
+    if(i>=screens.length-2) return; // stop before proposal
+    screens[i].classList.remove('active');
+    i++;
+    screens[i].classList.add('active');
+  },6000);
+}
+
+// NO button prank
+const no=document.getElementById('no');
+let noClickCount=0;
+no.addEventListener('click',()=>{
+  noClickCount++;
+  if(noClickCount===1) no.textContent='dhokha 😡';
+  else if(noClickCount===2) no.textContent='magar kyu 😭 😭';
+  else if(noClickCount===3) no.textContent='abee click on yes 🤬🙏🤬';
+  else startMath();
+});
+
+function startMath(){
+  document.getElementById('math').style.display='flex';
+}
+
+function check(){
+  document.getElementById('q').textContent='∫ e^x dx ?';
+  document.getElementById('ans').value='';
+}
+
+// YES button shows aurora scene
+document.getElementById('yes').addEventListener('click',()=>{
+  clearInterval(interval);
+  screens[i].classList.remove('active');
+  document.getElementById('end').classList.add('active');
+});
+</script>
+
+</body>
+</html>
