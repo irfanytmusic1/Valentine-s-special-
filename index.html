@@ -4,151 +4,40 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>For Shravya 💗</title>
-
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
-body{
-  font-family: 'Segoe UI', sans-serif;
-  height:100vh;
-  overflow:hidden;
-  background:#ffb6c1; /* initial pink screen */
-  color:white;
-  position:relative;
-}
-.screen{
-  position:absolute;
-  inset:0;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  padding:24px;
-  opacity:0;
-  transition:opacity 1s ease;
-}
+body{font-family:'Segoe UI',sans-serif;height:100vh;overflow:hidden;background:#ffb6c1;display:flex;align-items:center;justify-content:center;color:white;}
+#tapStart{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:2rem;cursor:pointer;}
+.screen{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;text-align:center;padding:24px;opacity:0;transition:opacity 1s ease;background:#05060f;}
 .screen.active{opacity:1;}
 .text{font-size:1.2rem;line-height:1.6;}
-#proposal h1{font-size:1.6rem;margin-bottom:24px;}
-button{
-  padding:14px 22px;
-  border:none;
-  border-radius:999px;
-  font-size:1rem;
-  cursor:pointer;
-}
-#yes{
-  background:#ff4d6d;
-  color:white;
-  box-shadow:0 0 20px rgba(255,77,109,.7);
-}
-#no{
-  background:#fff;
-  color:#000;
-  position:absolute;
-}
-.modal{
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.7);
-  display:none;
-  align-items:center;
-  justify-content:center;
-}
-.box{
-  background:#111;
-  padding:20px;
-  border-radius:16px;
-  width:85%;
-}
-input{
-  width:100%;
-  padding:10px;
-  margin-top:12px;
-}
-#end{
-  flex-direction:column;
-}
-#end img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  position:absolute;
-  inset:0;
-  z-index:-1;
-}
-#end p{
-  font-size:1.3rem;
-  padding:24px;
-  background:rgba(0,0,0,.4);
-  border-radius:16px;
-}
-#tapStart{
-  position:absolute;
-  inset:0;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background:#ffb6c1;
-  color:white;
-  font-size:1.5rem;
-  cursor:pointer;
-}
-.stars{
-  position:absolute;
-  inset:0;
-  background:transparent;
-  pointer-events:none;
-}
-.star{
-  position:absolute;
-  width:2px;height:2px;
-  background:white;
-  border-radius:50%;
-  opacity:0.8;
-  animation: twinkle 3s infinite alternate;
-}
-@keyframes twinkle{0%{opacity:0.2;}50%{opacity:1;}100%{opacity:0.2;}}
+button{padding:14px 22px;border:none;border-radius:999px;font-size:1rem;cursor:pointer;}
+#yes{background:#ff4d6d;color:white;box-shadow:0 0 20px rgba(255,77,109,.7);}
+#no{background:#fff;color:#000;position:absolute;}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.7);display:none;align-items:center;justify-content:center;}
+.box{background:#111;padding:20px;border-radius:16px;width:85%;}
+input{width:100%;padding:10px;margin-top:12px;}
+#end{flex-direction:column;display:flex;align-items:center;justify-content:center;position:absolute;inset:0;}
+#end img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;z-index:-1;}
+#end p{font-size:1.3rem;padding:24px;background:rgba(0,0,0,.4);border-radius:16px;}
+/* Stars */
+.stars{position:absolute;width:100%;height:100%;background:#05060f;overflow:hidden;}
+.star{position:absolute;width:2px;height:2px;background:white;border-radius:50%;animation:twinkle 2s infinite;}
+@keyframes twinkle{0%,100%{opacity:0.2;}50%{opacity:1;}}
 </style>
 </head>
 <body>
 
 <audio id="music" src="lover-instrumental.mp3" loop></audio>
 
-<!-- TAP TO BEGIN SCREEN -->
+<!-- Tap to start -->
 <div id="tapStart">Tap me</div>
 
-<script>
-const tap = document.getElementById('tapStart');
-const music = document.getElementById('music');
-const screens = [...document.querySelectorAll('.screen')];
-let i = 0;
-let interval;
+<!-- Stars background -->
+<div class="stars" id="stars"></div>
 
-tap.addEventListener('click', () => {
-    // hide tap screen
-    tap.style.display = 'none';
-
-    // play music
-    music.play().catch(()=>{});
-
-    // show first slide
-    screens[i].classList.add('active');
-
-    // start slideshow
-    interval = setInterval(() => {
-        if(i >= screens.length-2) return; // stop before proposal
-        screens[i].classList.remove('active');
-        i++;
-        screens[i].classList.add('active');
-    }, 6000);
-});
-</script>
-
-<div class="stars" id="starsContainer"></div>
-
-<!-- Poetry slides -->
+<!-- Poetry & Praise Slides -->
 <div id="s1" class="screen"><div class="text">
-For the one who stole my heart.<br>
 Not in a dramatic way.<br>
 Not all at once.<br>
 Just slowly…<br>
@@ -161,7 +50,7 @@ Every day I wake up,<br>
 and you’re the first thought that feels familiar.<br>
 Not exciting like a spark —<br>
 because sparks fade within a blink,<br>
-but comforting…
+but comforting.
 </div></div>
 
 <div id="s3" class="screen"><div class="text">
@@ -174,7 +63,7 @@ you became my favourite part of life.
 
 <div id="s4" class="screen"><div class="text">
 Loving you didn’t start with a moment.<br>
-It started with time.<br>
+It started with time.<br><br>
 With getting used to you.<br>
 With choosing you.<br>
 With realising life felt better<br>
@@ -190,7 +79,6 @@ Not for convenience.<br>
 But forever.
 </div></div>
 
-<!-- Six months section -->
 <div id="s6" class="screen"><div class="text">
 The last six months with you<br>
 didn’t just pass — they aged.<br>
@@ -201,28 +89,20 @@ I want every moment with you.<br>
 I want to grow old with you.
 </div></div>
 
-<!-- Praise section -->
 <div id="s7" class="screen"><div class="text">
-I look at your face every day.<br>
+I look at your face every day.<br><br>
 Your brown eyes…<br>
-I could stare into them forever.<br>
-<br>
-Your lips are built perfect like I never saw this much perfectness in someone’s lips — they are that perfect, cute little pink, soft, and mine 💗<br>
-Your nose — whoever made fun of it is jealous of its perfectness 😋<br>
-Your little cheeksy, I admire so much, my cutoo patootoo<br>
-And that little chin is underrated but not for me, habiba.<br>
-You’re that perfect that I can't even find words to describe your beauty, my lil bubu.<br>
-<br>
-Your curly hair… 😍 my real-life Rapunzel, rare in the best way.<br>
-And your skin… magnificent — even that word falls short when it’s you.
+I could stare into them forever.<br><br>
+Your lips are built perfect like I never saw this much perfectness in someone’s lips, they are that perfect, cute little pink soft and mine 💗<br><br>
+Your nose — whoever made fun of it is jealous of its perfectness 😋<br><br>
+Your little cheeksy, aww I love em, I admire em so much my cutoo patootoo.<br><br>
+Your little chin is underrated but not for me, habiba.<br><br>
+And your curly hair… 😍 my real-life Rapunzel.<br><br>
+And your skin… magnificent — even that word falls short when it’s you.<br><br>
+You’re not unreal. You’re just… you.<br>
+And that’s what makes "you" perfect.
 </div></div>
 
-<div id="s8" class="screen"><div class="text">
-I swear… one day I will eat you,<br>
-cutoo feebu 😋
-</div></div>
-
-<!-- Proposal prank -->
 <div id="proposal" class="screen">
   <div>
     <h1>Shravya, will you be my Valentine?</h1>
@@ -231,7 +111,6 @@ cutoo feebu 😋
   </div>
 </div>
 
-<!-- Math modal -->
 <div class="modal" id="math">
   <div class="box">
     <p id="q">2 + 2 = ?</p>
@@ -243,7 +122,6 @@ cutoo feebu 😋
   </div>
 </div>
 
-<!-- Ending aurora -->
 <div id="end" class="screen">
   <img src="aurora.jpg">
   <p>
@@ -257,78 +135,62 @@ cutoo feebu 😋
 </div>
 
 <script>
-// stars
-const starsContainer=document.getElementById('starsContainer');
-for(let j=0;j<100;j++){
-  const s=document.createElement('div');
-  s.classList.add('star');
-  s.style.top=Math.random()*100+'%';
-  s.style.left=Math.random()*100+'%';
-  starsContainer.appendChild(s);
-}
-
-// Tap to play + slideshow
-const screens=[...document.querySelectorAll('.screen')];
-let i=0;
-
-const music=document.getElementById('music');
-const tap=document.getElementById('tapStart');
-
-tap.addEventListener('click',()=>{
-  music.play().catch(()=>{});
-  tap.style.display='none';
-  screens[i].classList.add('active');
-  interval=setInterval(nextSlide,6000);
+// TAP TO PLAY
+const tap = document.getElementById('tapStart');
+const screens = [...document.querySelectorAll('.screen')];
+const music = document.getElementById('music');
+let i = 0;
+let interval;
+tap.addEventListener('click', ()=>{
+    tap.style.display='none';
+    music.play().catch(()=>{});
+    screens[i].classList.add('active');
+    interval = setInterval(()=>{
+        if(i>=screens.length-2) return; // stop at proposal
+        screens[i].classList.remove('active');
+        i++;
+        screens[i].classList.add('active');
+    },6000);
 });
 
-let interval;
-function nextSlide(){
-  if(i>=screens.length-2) return; // stop before proposal
-  screens[i].classList.remove('active');
-  i++;
-  screens[i].classList.add('active');
+// STARS
+const stars = document.getElementById('stars');
+for(let s=0;s<100;s++){
+    let star=document.createElement('div');
+    star.classList.add('star');
+    star.style.top=Math.random()*100+'%';
+    star.style.left=Math.random()*100+'%';
+    stars.appendChild(star);
 }
 
-// Proposal prank logic
-const no=document.getElementById('no');
-let noClicks=0;
+// PROPOSAL BUTTONS & MATH PRANK
+const no = document.getElementById('no');
+let clickCount=0;
 no.onclick=()=>{
-  noClicks++;
-  let txt;
-  if(noClicks===1) txt="😡 dhokha";
-  else if(noClicks===2) txt="😭 magar kyu 😭";
-  else txt="abee click on yes 🤬🙏🤬";
-  no.textContent=txt;
-
-  // move button
-  const x=Math.random()*(window.innerWidth-120);
-  const y=Math.random()*(window.innerHeight-60);
-  no.style.left=x+'px';
-  no.style.top=y+'px';
-
-  if(noClicks>=3){
-    document.getElementById('math').style.display='flex';
-    document.getElementById('ans').focus();
-  }
+    clickCount++;
+    if(clickCount===1) no.textContent='dhokha 😡';
+    else if(clickCount===2) no.textContent='magar kyu 😭 😭';
+    else if(clickCount===3) no.textContent='abee click on yes 🤬🙏🤬';
+    else if(clickCount>=4) document.getElementById('math').style.display='flex';
+    // move button randomly
+    no.style.left=Math.random()*(window.innerWidth-100)+'px';
+    no.style.top=Math.random()*(window.innerHeight-50)+'px';
 };
 
 function check(){
-  const a=document.getElementById('ans').value;
-  if(a==="4"){
-    document.getElementById('q').textContent="∫ e^x dx ?";
-    document.getElementById('ans').value='';
-  } else {
-    document.getElementById('q').textContent="Ok u won't click on yes na 😡😡 then solve 2+2 = ?";
-  }
+    const ans=document.getElementById('ans').value;
+    if(ans==='4'){
+        document.getElementById('q').textContent='∫ e^x dx ?';
+        document.getElementById('ans').value='';
+    }
 }
 
-// Yes button
+// YES BUTTON
 document.getElementById('yes').onclick=()=>{
-  screens[i].classList.remove('active');
-  document.getElementById('end').classList.add('active');
-  music.play();
+    if(interval) clearInterval(interval);
+    screens.forEach(s=>s.classList.remove('active'));
+    document.getElementById('end').classList.add('active');
 };
 </script>
-
 </body>
 </html>
